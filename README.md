@@ -66,9 +66,9 @@ Set the Nginx command to run in the foreground with ‘CMD [“nginx”, “-g�
   (**Don't forget to add space and then a dot to complete the command**. The dot tells Docker to look for the Dockerfile in the current directory)
 
 - After the image is built, execute "docker run -d -p 8080:80 challenge1".
---‘-d’ runs the container in detacjed mode (in the background).
---'-p' 8080:80 maps port 8080 on your host to port 80 in the container (where Nginx listens by default).
---‘challenge1’ is the name of the image to run.
+  - ‘-d’ runs the container in detacjed mode (in the background).
+  - '-p' 8080:80 maps port 8080 on your host to port 80 in the container (where Nginx listens by default).
+  - ‘challenge1’ is the name of the image to run.
 
 - Check if the creating a container is successfull by using this command "docker ps".
 
@@ -76,13 +76,13 @@ Set the Nginx command to run in the foreground with ‘CMD [“nginx”, “-g�
 
   ## Challenge 2 : Starting up a NodeJS Server
 
-  - Download the "challenge2.zip" file
+- Download the "challenge2.zip" file
  
-  - Unzip and Open the challenge2 folder
+- Unzip and Open the challenge2 folder
  
-  - Drag the challenge2 files to the challenge2 folder ( don't create a new folder )
+- Drag the challenge2 files to the challenge2 folder ( don't create a new folder )
  
-  - Type in the following command "docker init". This command creates a CLI menu prompting you to answer.  
+- Type in the following command "docker init". This command creates a CLI menu prompting you to answer.  
 
 Welcome to the Docker Init CLI!
 
@@ -131,10 +131,10 @@ Welcome to the Docker Init CLI!
 - After completing you will get a lot of files.
 
 - The following files contain:
-‘.doncterignore’ to specify which files and directories should be ignored in the build context.
-‘.Dockerfile’ This contains instructions for building your Docker image.
-‘.compose.yaml’ for defining and running multi-container Docker applications.
-‘README.Docker.md' with information about the generated files.
+ - ‘.doncterignore’ to specify which files and directories should be ignored in the build context.
+ - ‘.Dockerfile’ This contains instructions for building your Docker image.
+ - ‘.compose.yaml’ for defining and running multi-container Docker applications.
+ - ‘README.Docker.md' with information about the generated files.
 
 - Build the Docker image using the command "docker-compose up --build"
   
