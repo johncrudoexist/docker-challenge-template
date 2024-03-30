@@ -84,7 +84,7 @@ Set the Nginx command to run in the foreground with ‘CMD [“nginx”, “-g�
  
 - Type in the following command "docker init". This command creates a CLI menu prompting you to answer.  
 
-Welcome to the Docker Init CLI!
+> Welcome to the Docker Init CLI!
 
 > This utility will walk you through creating the following files with sensible defaults for your project:
 > - .dockerignore
