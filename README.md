@@ -66,9 +66,9 @@ Set the Nginx command to run in the foreground with ‘CMD [“nginx”, “-g�
   (**Don't forget to add space and then a dot to complete the command**. The dot tells Docker to look for the Dockerfile in the current directory)
 
 - After the image is built, execute "docker run -d -p 8080:80 challenge1".
-‘-d’ runs the container in detacjed mode (in the background).
-'-p' 8080:80 maps port 8080 on your host to port 80 in the container (where Nginx listens by default).
-‘challenge1’ is the name of the image to run.
+--‘-d’ runs the container in detacjed mode (in the background).
+--'-p' 8080:80 maps port 8080 on your host to port 80 in the container (where Nginx listens by default).
+--‘challenge1’ is the name of the image to run.
 
 - Check if the creating a container is successfull by using this command "docker ps".
 
