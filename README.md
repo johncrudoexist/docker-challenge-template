@@ -55,10 +55,10 @@ EXPOSE 8080
 CMD [ "nginx", "-g", "daemon off;" ]
 ```
 - This is what the code do.
-Specify the base image with “FROM nginx:latest”.
-Copy the “public” folder to the Nginx web directory with ‘COPY ./public /usr/share/nginx/html’.
-Expose port 8080 with ‘EXPOSE 8080’.
-Set the Nginx command to run in the foreground with ‘CMD [“nginx”, “-g”, “daemon off:”]’.
+ - Specify the base image with “FROM nginx:latest”.
+ - Copy the “public” folder to the Nginx web directory with ‘COPY ./public /usr/share/nginx/html’.
+ - Expose port 8080 with ‘EXPOSE 8080’.
+ - Set the Nginx command to run in the foreground with ‘CMD [“nginx”, “-g”, “daemon off:”]’.
 
 - Easy way to open CMD with the directory of challenge1 is by right clicking the challenge1 folder and then click on **Open in  Integrated Terminal**
 
