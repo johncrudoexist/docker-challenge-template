@@ -131,10 +131,10 @@ CMD [ "nginx", "-g", "daemon off;" ]
 - After completing you will get a lot of files.
 
 - The following files contain:
- - ‘.doncterignore’ to specify which files and directories should be ignored in the build context.
- - ‘.Dockerfile’ This contains instructions for building your Docker image.
- - ‘.compose.yaml’ for defining and running multi-container Docker applications.
- - ‘README.Docker.md' with information about the generated files.
+   - ‘.doncterignore’ to specify which files and directories should be ignored in the build context.
+   - ‘.Dockerfile’ This contains instructions for building your Docker image.
+   - ‘.compose.yaml’ for defining and running multi-container Docker applications.
+   - ‘README.Docker.md' with information about the generated files.
 
 - Build the Docker image using the command "docker-compose up --build"
   
