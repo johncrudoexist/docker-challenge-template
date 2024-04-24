@@ -216,11 +216,11 @@ volumes:
 
 - Navigate to http://localhost:8080/api/books
 
-![image](https://github.com/johncrudoexist/docker-challenge-template/assets/146027272/d8c277dd-e7ec-4e95-898d-db089cea61da)
-
 - Navigate to http://localhost:8080/api/books/1
 
 - You should be able to see the website.
+
+![image](https://github.com/johncrudoexist/docker-challenge-template/assets/146027272/d3adfadd-2602-4b2f-b834-a2bf8ad827e2)
 
 ## Challenge 4 : Scaling up an application
 
