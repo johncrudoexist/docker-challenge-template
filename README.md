@@ -141,3 +141,98 @@ CMD [ "nginx", "-g", "daemon off;" ]
 - Open your preferred browser and navigate to "http://localhost:3000/api/books"
 
 - Push your recent change to your GitHub repository fork.
+
+## Challenge 3 : Full stack application
+
+- Download `challenge3.zip`.
+
+- Download MariaDB (if you already have MariaDB skip this step).
+
+- Create a new user `CREATE USER 'anyusername'@'localhost' IDENTIFIED BY 'anypassword';`.
+
+- Create a new database `CREATE OR REPLACE DATABASE init;`
+
+- Copy and paste all code from the `init.sql` into the init database.
+
+- Create a new file name  `.env` in the challenge3 folder
+
+- Add all the following codes to the file:
+```sh
+DB_ROOT_PASSWORD=password
+DB_DATABASE=init
+DB_USERNAME=anyusername
+DB_PASSWORD=anypassword
+DB_HOST=db
+
+MYSQL_ROOT_PASSWORD=password
+MYSQL_DATABASE=init
+MYSQL_USER=anyusername
+MYSQL_PASSWORD=anypassword
+MYSQL_HOST=db
+```
+- Create a file name  `docker-compose.yml` in the challenge3 folder
+
+- Add the following code:
+```yml
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    depends_on:
+      - node-service
+  node-service:
+    build: ./docker/api
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+    depends_on:
+      - db
+  db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - ./docker/db/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3307:3307"
+volumes:
+  db-data:
+```
+(since my db port is different from the default 3306 you change it back to default)
+
+- In Vscode right click the challenge3 folder and click on the `Open in intergrated terminal`
+
+- Build the server, by using this code `docker-compose up --build`
+
+- Navigate to http://localhost:8080/api/books
+
+- Navigate to http://localhost:8080/api/books/1
+
+- You should be able to see the website.
+
+## Challenge 4 : Scaling up an application
+
+- Copy and paste the current `challenge3` folder, and rename the folder to `challenge4`
+
+- In Vscode right click the challenge4 folder and click on the `Open in intergrated terminal`
+
+- Build the server, by using this code `docker-compose up --build --scale node-service=3`
+
+- Open another terminal by right click the challenge4 folder and click on the `Open in intergrated terminal`
+
+- Run the command `docker-compose ps`
+  
+- The result will look like this
+![image](https://github.com/johncrudoexist/docker-challenge-template/assets/146027272/162e497b-ce66-453c-a21d-a4c00687bdc3)
+
+- Push all of you change into you Github repository fork.
