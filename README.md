@@ -237,4 +237,4 @@ volumes:
 - The result will look like this
 ![image](https://github.com/johncrudoexist/docker-challenge-template/assets/146027272/162e497b-ce66-453c-a21d-a4c00687bdc3)
 
-- Push all of you change into you Github repository fork.
+- Push and commit all of you change into you Github repository fork.
